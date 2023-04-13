@@ -32,6 +32,13 @@ public class Contest extends BaseEntity{
     //  2. You can use "./gradlew build" to check if your code builds successfully.
 
     private void validateQuestionList(List<Question> qList, Level contestLevel) throws InvalidContestException {
+         for (Question questions : qList) {
+            if(questions.getLevel()!=contestLevel)
+            {
+                throw new InvalidContestException();
+            }
+            
+         }
     }
 
 
