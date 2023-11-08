@@ -1,10 +1,12 @@
 package com.crio.codingame.repositories;
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 //import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 import com.crio.codingame.entities.Level;
 import com.crio.codingame.entities.Question;
@@ -51,8 +53,12 @@ public class QuestionRepository implements IQuestionRepository {
        // }
 
         return  q1;
+       }
     // return Collections.emptyList();
-    }
+
+  //  @Override
+    //public List<Question> findAll() {
+    //}
 
     @Override
     public Optional<Question> findById(String id) {
@@ -98,9 +104,13 @@ public class QuestionRepository implements IQuestionRepository {
             }
          }
          return ls;
+        }
     // return Collections.emptyList();
   //  }
   //   return Collections.emptyList();
-    }
+
+ //   @Override
+   // public List<Question> findAllQuestionLevelWise(Level level) {
+    //}
     
 }

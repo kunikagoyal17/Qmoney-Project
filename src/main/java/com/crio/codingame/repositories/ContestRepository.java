@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.ArrayList;
 //import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 import com.crio.codingame.entities.Contest;
 import com.crio.codingame.entities.Level;
@@ -48,9 +49,13 @@ public class ContestRepository implements IContestRepository {
         ArrayList<Contest>  c= new ArrayList<Contest>(contestMap.values());
 
         return c;
+    }
 
     // return Collections.emptyList();
-    }
+
+   // @Override
+    //public List<Contest> findAll() {
+    //}
 
     @Override
     public Optional<Contest> findById(String id) {
@@ -96,9 +101,13 @@ public class ContestRepository implements IContestRepository {
             }
         }
         return cn;
+    }
 
 //     return Collections.emptyList();
-    }
+
+   // @Override
+    //public List<Contest> findAllContestLevelWise(Level level) {
+    //}
 
     
 }

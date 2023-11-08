@@ -93,6 +93,14 @@ public class ContestService implements IContestService {
     // return Collections.emptyList();
     
 
+   // private List<Question> pickQuestionsList(final List<Question> questions,final Integer numQuestion){
+   // }
+
+
+  //  @Override
+    //public List<Contest> getAllContestLevelWise(Level level) {
+    //}
+
     @Override
     public ContestSummaryDto runContest(String contestId, String contestCreator) throws ContestNotFoundException, InvalidContestException {
         final Contest contest = contestRepository.findById(contestId).orElseThrow(() -> new ContestNotFoundException("Cannot Run Contest. Contest for given id:"+contestId+" not found!"));
@@ -129,6 +137,11 @@ public class ContestService implements IContestService {
     }
 
     //Reference:- https://www.geeksforgeeks.org/randomly-select-items-from-a-list-in-java/
+
+    
+   // private void validateContest(final Contest contest, final String contestCreator) throws InvalidContestException {
+    //}
+
     private List<Question> pickRandomQuestions(final List<Question> questions){
         List<Question> qList = questions.stream().collect(Collectors.toList());
         int size = qList.size();

@@ -47,5 +47,11 @@ public class QuestionService implements IQuestionService{
       //  ques=findAllQuestionLevelWise(level);
     
     
+    }
+
+
+  //  @Override
+  //  public List<Question> getAllQuestionLevelWise(Level level) {
+  //  }
     
-}
+
