@@ -23,6 +23,8 @@ public class App {
 	}
 
     public static void run(List<String> commandLineArgs) {
+       jukeboxinput.txt.run(commandLineArgs);
+
     // Complete the final logic to run the complete program.
 
     }
