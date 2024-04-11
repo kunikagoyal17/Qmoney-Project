@@ -40,8 +40,16 @@ public class ApplicationConfig {
     private final AttendContestCommand attendContestCommand = new AttendContestCommand(userService);
     private final RunContestCommand runContestCommand = new RunContestCommand(contestService);
     private final LeaderBoardCommand leaderBoardCommand = new LeaderBoardCommand(userService);
-    private final WithdrawContestCommand withdrawContestCommand = new WithdrawContestCommand(userService);
+    private final CreateQuestionCommand withdrawContestCommand = new WithdrawContestCommand(userService);
 
+    //creating a map which store the command name as key  //obj of that particular as value
+        
+
+
+
+
+
+        
     private final CommandInvoker commandInvoker = new CommandInvoker();
 
     public CommandInvoker getCommandInvoker(){

@@ -7,6 +7,12 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import com.crio.jukebox.repository.DataLoader;
+import com.crio.jukebox.Exceptions.NoSuchCommandException;
+import com.crio.jukebox.Exceptions.NoSuchDataException;
+//import com.crio.jukebox.repository.data.DataLoader;
+import com.crio.jukebox.appConfig.ApplicationConfig;
+import com.crio.jukebox.commands.CommandInvoker;
 
 
 public class App {
@@ -23,9 +29,33 @@ public class App {
 	}
 
     public static void run(List<String> commandLineArgs) {
-       jukeboxinput.txt.run(commandLineArgs);
-
     // Complete the final logic to run the complete program.
+    ApplicationConfig applicationConfig = new ApplicationConfig();
+
+    DataLoader dataLoader = applicationConfig.getDataLoader();
+    CommandInvoker commandInvoker = applicationConfig.getCommandInvoker();
+
+    BufferedReader reader;
+    String inputFile = commandLineArgs.get(0).split("=")[1];
+        commandLineArgs.remove(0);
+
+        try {
+            reader = new BufferedReader(new FileReader(inputFile));
+            String line = reader.readLine();
+            while (line != null) {
+                List<String> tokens = Arrays.asList(line.split(" "));
+                if(tokens.get(0).contains("DATA")){
+                    dataLoader.executeData(tokens.get(0),tokens.get(1));
+                } else {
+                    commandInvoker.executeCommand(tokens.get(0),tokens);
+                }
+                // read next line
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException | NoSuchCommandException | NoSuchDataException e) {
+            e.printStackTrace();
+        } 
 
     }
 }
