@@ -10,8 +10,8 @@ public class CommandInvoker {
 
     private static final Map<String, ICommand> commandMap = new HashMap<>();
 
-    public void register(String commandName, ICommand command){
-        commandMap.put(commandName, command);
+    public void register(String commandName, DeletePlaylistCommandTest deletePlaylistCommand){
+        commandMap.put(commandName, deletePlaylistCommand);
     }
 
     public ICommand get(String commandName){

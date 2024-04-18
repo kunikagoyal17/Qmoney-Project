@@ -11,7 +11,14 @@ import com.crio.jukebox.repository.IUserRepository;
 import com.crio.jukebox.dtos.UserInfoDto;
 //import com.crio.jukebox.entities.User;
 
-public class UserService implements IUserService {
+
+
+
+    
+    
+
+
+ public class UserService implements IUserService {
 
     private final IUserRepository userRepository;
 
@@ -27,10 +34,4 @@ public class UserService implements IUserService {
         return uDto;
     }
 
-}
- 99 changes: 99 additions & 0 deletions99  
-
-
-    
-    
 }

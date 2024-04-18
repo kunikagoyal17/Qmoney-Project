@@ -34,7 +34,8 @@ public class ApplicationConfig {
 
     //private com.crio.jukebox.service.IUserRepository IUserrepository;
 
-    private final ISongService iSongService = new SongService(iUserRepository, iSongRepository);
+    private final ISongService iSongService = new SongService( iSongRepository  ,iUserRepository);
+    
 
 
     private final ICommand createUserCommand = new CreateUserCommand(iUserService);

@@ -19,7 +19,7 @@ import com.crio.jukebox.repository.IUserRepository;
 
 public class SongService implements ISongService {
 
-    private final  ISongRepository songRepository;
+    private final ISongRepository songRepository;
     private final  IUserRepository userRepository;
 
     public SongService(ISongRepository songRepository, IUserRepository userRepository){

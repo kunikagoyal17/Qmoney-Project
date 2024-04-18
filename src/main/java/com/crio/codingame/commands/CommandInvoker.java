@@ -11,8 +11,8 @@ public class CommandInvoker {
     private static final Map<String, ICommand> commandMap = new HashMap<>();
 
     // Register the command into the HashMap
-    public void register(String commandName, CreateQuestionCommand createQuestionCommand){
-        commandMap.put(commandName,createQuestionCommand);
+    public void register(String commandName, CreateUserCommand createUserCommand){
+        commandMap.put(commandName,createUserCommand);
     }
 
     // Get the registered Command

@@ -37,7 +37,7 @@ public class UserServiceTest {
         UserInfoDto expectedUserInfoDto = new UserInfoDto(expectedUser.getId(), expectedUser.getName());
         when(userRepositoryMock.save(any(User.class))).thenReturn(expectedUser);
         //Act
-        UserInfoDto actualUserInfoDto = userService.create("Pankaj");
+        UserInfoDto actualUserInfoDto =  userService.create("Pankaj");
         User actualUser = new User(actualUserInfoDto.getId(), actualUserInfoDto.getName());
         //User actualUser = new User(uDto.getId(), uDto.getName());
         //Assert
@@ -46,6 +46,14 @@ public class UserServiceTest {
         verify(userRepositoryMock, times(1)).save(any(User.class));
 
     }
+
+    //private UserInfoDto create(String string) {
+      //  return null;
+    //}
+
+   // private UserInfoDto create(UserInfoDto string) {
+  ////      return string;
+   // }
 
    // private UserInfoDto create(String string) {
     //    return null;
