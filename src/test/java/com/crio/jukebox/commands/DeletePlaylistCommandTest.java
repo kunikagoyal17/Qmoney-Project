@@ -10,9 +10,9 @@ import static org.mockito.Mockito.verify;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
-
-import com.crio.codingame.exceptions.UserNotFoundException;
+//import com.crio.codingame.exceptions.UserNotFoundException;
 import com.crio.jukebox.Exceptions.PlaylistNotFoundException;
+import com.crio.jukebox.Exceptions.UserNotFoundException;
 //import com.crio.jukebox.Service.IPlaylistService;
 import com.crio.jukebox.service.IPlaylistService;
 import org.junit.jupiter.api.AfterEach;
