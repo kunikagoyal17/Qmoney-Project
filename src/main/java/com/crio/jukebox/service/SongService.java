@@ -1,7 +1,8 @@
 package com.crio.jukebox.service;
 
 
-//import com.crio.jukebox.repositories.IUserRepository;
+
+import com.crio.jukebox.repositories.IUserRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,12 +16,11 @@ import com.crio.jukebox.entities.UserPlaylistCurrentSong;
 import com.crio.jukebox.Exceptions.SongNotFoundException;
 import com.crio.jukebox.Exceptions.UserNotFoundException;
 import com.crio.jukebox.repository.ISongRepository;
-import com.crio.jukebox.repository.IUserRepository;
 
 public class SongService implements ISongService {
 
     private final ISongRepository songRepository;
-    private final  IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     public SongService(ISongRepository songRepository, IUserRepository userRepository){
         this.songRepository = songRepository;
@@ -29,7 +29,7 @@ public class SongService implements ISongService {
 
     // Switch song on the active playlist currently playing any song to a particular songID if it exist in active playlist.
     @Override
-    public static SongSummaryDto playSong(String userId, String songId) throws UserNotFoundException, SongNotFoundException{
+    public SongSummaryDto playSong(String userId, String songId) throws UserNotFoundException, SongNotFoundException{
 
         final User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User for given id: " + userId + " not found!"));
         //fetch active playlist

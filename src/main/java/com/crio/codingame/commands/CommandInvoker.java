@@ -5,14 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.crio.codingame.exceptions.NoSuchCommandException;
-import com.crio.jukebox.commands.CreatePlaylistCommand;
 
 public class CommandInvoker {
     private static final Map<String, ICommand> commandMap = new HashMap<>();
 
     // Register the command into the HashMap
-    public void register(String commandName, CreateUserCommand createUserCommand){
-        commandMap.put(commandName,createUserCommand);
+    public void register(String commandName, ICommand command){
+        commandMap.put(commandName,command);
     }
 
     // Get the registered Command

@@ -28,7 +28,7 @@ public class CommandInvokerTest {
     CreateUserCommand createUserCommand;
 
     @Mock
-    DeletePlaylistCommandTest deletePlaylistCommand;
+    DeletePlaylistCommand deletePlaylistCommand;
 
     @Mock
     ModifyPlaylistCommand modifyPlaylistCommand;
@@ -46,13 +46,13 @@ public class CommandInvokerTest {
 
     @BeforeEach
     public void setup(){
-        commandInvoker = new CommandInvoker();
-        CommandInvoker.register("CREATE-USER", createUserCommand);
-        commandInvoker.register("CREATE-PLAYLIST", createPlaylistCommand);
-        CommandInvoker.register("DELETE-PLAYLIST", deletePlaylistCommand);
-        CommandInvoker.register("MODIFY-PLAYLIST", modifyPlaylistCommand);
-        CommandInvoker.register("PLAY-PLAYLIST", playPlaylistCommand);
-        CommandInvoker.register("PLAY-SONG", playSongCommand);
+        commandInvoker  = new CommandInvoker();
+        commandInvoker.register("CREATE-USER",createUserCommand);
+    commandInvoker.register("CREATE-PLAYLIST", createPlaylistCommand);
+        commandInvoker.register("DELETE-PLAYLIST", deletePlaylistCommand);
+        commandInvoker.register("MODIFY-PLAYLIST", modifyPlaylistCommand);
+        commandInvoker.register("PLAY-PLAYLIST", playPlaylistCommand);
+        commandInvoker.register("PLAY-SONG", playSongCommand);
     }
 
     

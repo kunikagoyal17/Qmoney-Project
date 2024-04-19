@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 import com.crio.jukebox.dtos.UserInfoDto;
 import com.crio.jukebox.entities.User;
 import com.crio.jukebox.repository.IUserRepository;
-
+import com.crio.jukebox.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class UserServiceTest {
     private IUserRepository userRepositoryMock;
 
     @InjectMocks
-    private UserServiceTest userService;
+    private UserService userService;
 
     @Test
     @DisplayName("create method should create UserInfoDto")
@@ -37,7 +37,7 @@ public class UserServiceTest {
         UserInfoDto expectedUserInfoDto = new UserInfoDto(expectedUser.getId(), expectedUser.getName());
         when(userRepositoryMock.save(any(User.class))).thenReturn(expectedUser);
         //Act
-        UserInfoDto actualUserInfoDto =  userService.create("Pankaj");
+        UserInfoDto actualUserInfoDto = userService.create("Pankaj");
         User actualUser = new User(actualUserInfoDto.getId(), actualUserInfoDto.getName());
         //User actualUser = new User(uDto.getId(), uDto.getName());
         //Assert
@@ -46,16 +46,6 @@ public class UserServiceTest {
         verify(userRepositoryMock, times(1)).save(any(User.class));
 
     }
-
-    //private UserInfoDto create(String string) {
-      //  return null;
-    //}
-
-   // private UserInfoDto create(UserInfoDto string) {
-  ////      return string;
-   // }
-
-   // private UserInfoDto create(String string) {
-    //    return null;
-   // }
 }
+
+    
