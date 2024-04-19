@@ -1,7 +1,9 @@
 
-package com.crio.jukebox.entities;
 
-import com.crio.jukebox.exceptions.SongNotFoundException;
+
+import com.crio.jukebox.Exceptions.SongNotFoundException;
+import com.crio.jukebox.entities.Playlist;
+import com.crio.jukebox.entities.Song;
 
 public class UserPlaylistCurrentSong {
     //Use to store current song with active playlist
