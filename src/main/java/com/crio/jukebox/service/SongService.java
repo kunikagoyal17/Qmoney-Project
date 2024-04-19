@@ -2,7 +2,7 @@ package com.crio.jukebox.service;
 
 
 
-import com.crio.jukebox.repositories.IUserRepository;
+import com.crio.jukebox.repository.IUserRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

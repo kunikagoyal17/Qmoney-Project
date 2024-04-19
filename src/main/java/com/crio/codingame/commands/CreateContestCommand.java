@@ -3,10 +3,10 @@ package com.crio.codingame.commands;
 import java.util.List;
 //import java.util.*;
 
-import com.crio.codingame.entities.Contest;
+//import com.crio.codingame.entities.Contest;
 import com.crio.codingame.entities.Level;
 import com.crio.codingame.services.IContestService;
-import com.crio.codingame.services.UserService;
+//import com.crio.codingame.services.UserService;
 
 public class CreateContestCommand implements ICommand{
 

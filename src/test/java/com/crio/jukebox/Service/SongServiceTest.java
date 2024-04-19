@@ -86,7 +86,7 @@ public class SongServiceTest {
         SongSummaryDto expectedSongSummaryDto = new SongSummaryDto(playSong.getTitle(), playSong.getAlbum().getName(), playSong.getFeaturArtists().stream().map(s -> s.getName()).collect(Collectors.toList()));
         //Act
         //2nd Song Switch
-        SongSummaryDto actualSongSummaryDto = SongService.playSong("1", "2");
+        SongSummaryDto actualSongSummaryDto = songService.playSong("1", "2");
         //Assert
         Assertions.assertEquals(playlist1, user.getUserPlaylistCurrentSong().getActivePlaylist());
         Assertions.assertEquals(playSong, user.getUserPlaylistCurrentSong().getCurrentSong());
