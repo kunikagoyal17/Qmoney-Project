@@ -116,7 +116,7 @@ public class SongServiceTest {
         when(songRepositoryMock.findById(anyString())).thenReturn(Optional.of(newSong));
 
         //Act and Assert
-        Assertions.assertThrows(SongNotFoundException.class, () -> SongService.playSong("1", "3"));
+        Assertions.assertThrows(SongNotFoundException.class, () -> songService.playSong("1", "3"));
         verify(userRepositoryMock, times(1)).findById(anyString());
         verify(songRepositoryMock, times(1)).findById(anyString());
     }
